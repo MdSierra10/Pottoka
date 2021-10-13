@@ -10,7 +10,7 @@ def Login():
 @app.route("/registro/")
 def Registro():
     return "pagina de registro"
-@app.route("/Principal/")
+@app.route("/home/")
 def inicio():
     return "Pagina Feed"
 @app.route("/perfil/")
