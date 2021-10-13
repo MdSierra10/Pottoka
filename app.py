@@ -11,15 +11,15 @@ def home():
     return render_template("base.html")
 
 @app.route("/")
-@app.route("/login/", methods=["POST"])
+@app.route("/login/", methods=["GET", "POST"])
 def Login():
     return render_template("login.html")
 
-@app.route("/registro/" , methods=["POST"])
+@app.route("/registro/" , methods=["GET", "POST"])
 def Registro():
     return "pagina de registro"
 
-@app.route("/home/admin/", methods=["POST"])
+@app.route("/home/admin/", methods=["GET", "POST"])
 def dashboard():
     return "Pagina Admin"
 
