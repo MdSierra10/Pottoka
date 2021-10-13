@@ -13,10 +13,10 @@ def Registro():
 @app.route("/home/")
 def inicio():
     return "Pagina Feed"
-@app.route("/perfil/")
+@app.route("/home/perfil/")
 def Perfil():
     return "Pagina Perfil"
-@app.route("/admin/")
+@app.route("/home/admin/")
 def inicio():
     return "Pagina Admin"
 
