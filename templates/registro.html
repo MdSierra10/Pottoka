@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/estilos.css" />
+    <link rel="icon" href="../static/assets/favicon.ico" type="image/x-icon" />
+
+    <title>POTTOKA</title>
+  </head>
+  <body>
+    <!--Caja Principal -->
+    <div class="containerPrincipal">
+      <!--Aqui la imagen con el logo -->
+      <div class="imagenLateral">
+        <div class="fondoImagenRegistro"></div>
+        <div class="fondoColor"></div>
+        <img class="logoBlanco" src="../static/assets/Logo_blanco.svg" alt="Logo" />
+      </div>
+
+      <!--Aqui va el contenido del login -->
+      <div class="contenido">
+        <!-- Logo -->
+        <div class="logoPrincipal">
+          <img src="../static/assets/Logo_principal.svg" alt="Logo" />
+        </div>
+        
+        <!-- Titulos -->
+        <div class="textoInicio">
+          <h1>Registrate</h1>
+          <h4>
+            ¿Ya tienes cuenta con Pottoka?
+            <a href="/login">!Inicia sesión!</a>
+          </h4>
+        </div>
+
+        <!-- formularios -->
+        <form class="formularios" action="../login">
+          <input required type="text" placeholder="Nombre" />
+          <input required type="email" placeholder="Email" />
+          <input required type="number" placeholder="Celular" />
+          <input required type="password" placeholder="Contraseña" />
+          <input required type="text" placeholder="Usuario" />
+          <button type="submit" onClick="login()">Registrate</button>
+        </form>
+
+        <!-- politicas de privacidad -->
+        <div class="enlacesInicio">
+          <p>
+            *Al registrarte, aceptas nuestros Términos de Uso y recibirás
+            correos electrónicos y , actualizaciones de Pottoka; al reconocer
+            que leiste nuestra
+            <a href="/politicas-de-privacidad"> Política de Privacidad</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
