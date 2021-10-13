@@ -4,7 +4,6 @@ from formularios.fomularios import Login, Register
 
 #se instancia un objeto de flask para crear las rutas
 app=Flask(__name__)
-
 #se hacen las rutas y se colocan los metodos
 @app.route("/")
 def home():
@@ -17,21 +16,19 @@ def Login():
 @app.route("/registro/" , methods=["GET","POST"])
 def Registro():
     return "pagina de registro"
-
-@app.route("/Principal/", methods=["GET"])
-def inicio():
-    return "Pagina Feed"
-
-@app.route("/perfil/", methods=["GET"])
-def Perfil():
-    return "Pagina Perfil"
+<<<<<<< HEAD
 
 @app.route("/admin/", methods=["POST"])
 def dashboard():
     return "Pagina Admin"
 @app.route("/admin/estadistic", methods=["POST"])
 def dashboardEstadistic():
-    return "Pagina Admin"
+@app.route("/perfil/", methods=["GET"])
+def Perfil():
+    return "Pagina Perfil"
+
+
+
 
 
 
