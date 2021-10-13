@@ -1,16 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %} {% endblock %}</title>
-</head>
-<body>
-    {% block content %} {% endblock %}
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/base.css" />
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
+
+    <!-- Iconos -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <title>POTTOKA</title>
+  </head>
+  <body>
+
+    <!--Caja Principal -->
+    <header>
+      <div id="menu" class="menu">
+        <i class="fal fa-bars"></i>
+      </div>
+
+      <!-- Logo -->
+      <div class="logo"><img src="../assets/Logo_principal.svg" alt="" /></div>
+
+      <!-- Menu principal -->
+      <nav>
+        <ul>
+          <li>
+            <a href="">
+              <i class="fal fa-home"></i>
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fal fa-user"></i>
+              Mi perfil
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fal fa-cog"></i>
+              Configuración
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+            <!-- Busqueda menu hamburguesa -->
+      <form class="busqueda">
+        <i class="icono fal fa-search"></i>
+        <input type="search" placeholder="Buscar" />
+      </form>
+    </aside>
+
+      <!-- Usuario -->
+      <div class="nombreUsuario">
+        <img src="../assets/Avatar.jpg" alt="" />
+        <h4>Liliana Jimenez</h4>
+      </div>
+      <div class="space"></div>
+    </header>
+
+    <!-- menú responsive -->
+    <aside id="menuMovil">
+      <div class="cerrarCanvas">
+        <i id="cerrarMenu" class="fal fa-times"></i>
+      </div>
+
+      <!-- Usuario responsive -->
+      <div class="nombreUsuario">
+        <img src="../assets/Avatar.jpg" alt="" />
+        <h4>Liliana Jimenez</h4>
+      </div>
+      <hr />
+      <!-- Menú responsive -->
+      <nav>
+        <ul>
+          <li>
+            <a href="">
+              <i class="fal fa-home"></i>
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fal fa-user"></i>
+              Mi perfil
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fal fa-cog"></i>
+              Configuración
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <hr />
+      <!-- Busqueda menu hamburguesa -->
+      <form class="busqueda">
+        <i class="icono fal fa-search"></i>
+        <input type="search" placeholder="Buscar" />
+      </form>
+    </aside>
+
+    <!-- Contenido -->
+    <main>
+   
+    </main>
+    <!-- Script del menú hamburguesa -->
+    <script src="../js/base.js"></script>
+  </body>
 </html>
-<script>
-    /*Se pueden colocar funcionalidades con javascript individual*/
-    /*Se pueden colocar estilos individuales*/
-</script>
