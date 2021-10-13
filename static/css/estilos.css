@@ -86,6 +86,18 @@ p {
   background-size: cover;
   opacity: 0.5;
 }
+.fondoImagenRegistro {
+  /* Fondo de la barra lateral */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(../assets/fondo_2.png);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.5;
+}
 
 .logoBlanco {
   position: relative;
@@ -109,7 +121,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5%;
+  padding: 3%;
 
   /* 
   border: 1px solid #009de0;
@@ -129,7 +141,7 @@ p {
   margin: 10px;
 }
 .formularios > * {
-  margin: 5%;
+  margin: 3%;
 }
 
 button {
@@ -167,6 +179,11 @@ input {
 input:focus {
   border: 1px solid rgba(0, 0, 0, 0.12);
   outline: none;
+}
+
+.enlacesInicio {
+  padding: 10%;
+  text-align: center;
 }
 
 @media (max-width: 600px) {
