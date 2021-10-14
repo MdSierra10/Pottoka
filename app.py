@@ -7,10 +7,6 @@ from formularios.formularios import Login, Register
 app=Flask(__name__)
 #se hacen las rutas y se colocan los metodos
 
-@app.route("/homero/")
-def homero():
-    return ("Prueba de pull")
-
 @app.route("/home/")
 def home():
     return render_template("base.html")
