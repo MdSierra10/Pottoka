@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from formularios.formularios import Login, Register
+from formularios.fomularios import Login, Register
 
 #aqui se instancian las librerias
 #cambio de nombre de archivo a formularios.py
