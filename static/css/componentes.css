@@ -1,0 +1,157 @@
+/* Importacion de fuente nunito */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --colorPrincipal: #009de0;
+  --colorSecundario: #3d008a;
+  --colorElemento: #545454;
+}
+
+* {
+  font-family: "Nunito", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Manuel, Esto desde aqui copiar en el css main para multiplicarlo att: bri!. */
+
+.cardFeed {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px 300px min-content min-content;
+  max-width: 660px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+}
+
+.imagen {
+  display: flex;
+}
+
+.imagen > img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.titulo .fechaPublicacion {
+  font-size: 12px;
+  color: #878787;
+}
+
+.usuario {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.usuario img {
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.descripcion {
+  padding: 10px 20px;
+}
+
+.descripcion .tituloFoto {
+  color: var(--colorPrincipal);
+  font-size: 14px;
+}
+
+.descripcion .descripcionFoto {
+  color: var(--colorElemento);
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.divider {
+  margin-left: 20px;
+  margin-right: 20px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.accionesComentario {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.comentarios {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+}
+
+.comentarios.active {
+  transform: scaleY(1);
+  max-height: 1000px;
+}
+
+.comentarios .nuevoComentario {
+  background-color: #f8f8f8;
+  padding: 20px;
+}
+
+.comentarios .nuevoComentario form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  background: #009de0;
+  border-radius: 20px;
+  padding: 5px 15px;
+  border: none;
+  color: white;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.flat {
+  background-color: transparent;
+  color: var(--colorPrincipal);
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  padding: 10px;
+  border: none;
+  width: 100%;
+  box-shadow: 0px 10px 40px rgb(0 0 0 / 5%);
+  border: 1px solid transparent;
+  border-radius: 15px;
+  color: var(--colorElemento);
+  font-size: 12px;
+}
+
+::placeholder {
+  color: #878787;
+  font-size: 12px;
+}
+
+input:focus {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  outline: none;
+}
