@@ -1,0 +1,46 @@
+Metodos de Window
+Ciclo III
+
+para abrir una nueva ventana
+open = (URL=" ")
+
+alert: un cuadro de alerta
+
+Prompt:Para recibir un valor del usuario
+
+Confirm: Si necesitas cancelar o confirmar
+
+close: cierra la ventana
+
+setPrint():para imprimir
+
+setInterval(); 
+
+SetOut():
+
+Modelo DE EVENTOS
+onClick: usuario da click en cualquier elemento
+
+onLoad: se ejecuta cuando la pagina se carga completamente
+
+onFocus: Para el puntero 
+
+onResize: modifica el tamaño de la ventana
+
+onBlur: PAra sacar el focus
+
+onChange: para cambiar tipo de dato
+
+onKeypress:
+
+
+
+
+
+
+
+
+
+
+
+

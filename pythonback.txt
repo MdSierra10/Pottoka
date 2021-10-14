@@ -1,0 +1,105 @@
+
+
+@app.route("/Principal/", methods=["GET"])
+def inicio():
+    return "Pagina Feed"
+
+
+@app.route("/admin/", methods=["POST"])
+def dashboard():
+    return "Pagina Admin"
+@app.route("/admin/estadistic", methods=["POST"])
+def dashboardEstadistic():
+
+
+#se hacen las rutas y se colocan los metodos
+@app.route("/")
+def home():
+    return render_template("base.html")
+
+@app.route("/login/", methods=["GET","POST"])
+def Login():
+    return render_template("login.html")
+
+@app.route("/registro/" , methods=["GET","POST"])
+def Registro():
+    return "pagina de registro"
+<<<<<<< HEAD
+
+
+
+@app.route("/perfil/", methods=["GET"])
+def Perfil():
+    return "Pagina Perfil"
+
+
+
+
+Preparar entorno de programacion
+1. Instalar python
+
+2.Instalar virtualenv
+	el comando para instalar virtualenv
+	# apt-get install python3-env 
+
+3. Crear entorno virtual
+	para crear entorno virtual con virtualenv
+	$ python -m venv nombre_del_entorno
+
+	Para activar el entorno virtual
+	. .\Entorno_Virtual\Scripts\activate
+
+	Para desactivar
+	desactivate
+
+para cambiar el nombre de FLask_App
+	export FLASK_APP="nombre_de_lo_que_sea"
+	Normalmente sirve sí el archivo se llama app.py
+	pip
+Para activar las actualizaciones
+	 $env:FLASK_ENV = "development"
+	
+jinja
+<link rel="stylesheet" href="{{ url_for('static',filename='css/estilos.css') }}">
+<script src="{{ url_for('static',filename='js/index.js') }}"></script>
+<form class="formularios" action="../login">
+Manejo de servidor y formulario
+
+Se crea el entorno
+se activa el entorno
+se descarga flask
+se corre flask
+se activa el modo actualizaciones 
+
+
+Identificadores 
+Name = Para enviar datos de front a backend
+id = para el front a javascriptg
+
+Seguridad en mandar datos:
+No dejar las contraseñas en el codigo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

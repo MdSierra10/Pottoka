@@ -1,0 +1,131 @@
+//Diseños de bases de datos//
+-es una coleccion de info organizada de modo que se pueda seleccionar 
+el fragmento necesario
+-es un sistema de archivos electronicos
+-se organizan por campos, registros y archivos
+-facilita el acceso y recuperacion mediante el uso de un ordenador
+
+//Bases de datos relacionales//
+- Datos organizados en un conjunto de tablas formalmente definidas,
+desde las cuales se puede acceder a los datos o ingresarlos de muchas formas 
+diferentes sin necesidad de reorganizar las tablas de la base de datos.
+SQL
+-Se fundamentan en la organizacion de la informacion en pequeñas secciones
+unidas o integradas mediante unos identificadores
+
+//Elementos de Bases de datos//
+-Relaciones base y derivadas
+-Restricciones y dominios
+-clave unica
+-clave primaria
+-clave foranea
+
+Se usan cuando los cambios son minimos.
+#######################################################
+Tablas:
+Son contenedores donde están los campos como una hoja de excel:
+|Cod   |	nombre	      |	precio  |	cantidad|
+|------------------------------------------------------------------|
+|10       |    TV	      |	400        |	33             |
+|------------------------------------------------------------------|
+|20       |	eq.Sonido      |	250        |	21             |
+
+Hay dos registros(TV y Equipo de sonido)	->Filas
+4 campos				->Columnas
+
+Productos
+--------------
+cod ->(PrimaryKey:Es un campo que no acepta duplicados, o sea es unico)
+nombre
+precio
+cantidad
+cod_marca(ForeanKey:Es un campo que hace referencia a un campo de otra tabla. Relaciones)
+
+############################
+//Motores BD o Sistema de gestion de base de datos//
+-Oracle				->(pago)
+-Postgrest			->(free)
+-SQL Server(pago, microsoft)		->Lenguaje comun C#, pero se usa con más.
+-MySql				->(Oracle, pago)
+-Maria DB 			->(Rama que se derivó de MySQL, Free)
+-DB2				->(IBM, Pago)
+
+//Para elegir una buena base de datos en un proyecto//
+-Alcance
+-Precio
+-Seguridad
+-Soporte
+-Garantia
+
+
+//Relaciones de Bases de Datos//
+Mal diseño
+producto
+cod (PK)
+nombre
+precio
+cantidad
+factura
+total_fac
+fec_fac
+
+Tips
+Se cojen los mockups
+se identifica los datos que se van a manejar
+carrito de compra
+codigo
+nombre
+precios
+se utiliza solamente lo que se necesite
+
+paravalidar si está bien es metiendole datos, ya sea en excel, o una hoja
+
+Cardinalidad
+Relacion de 1-> Muchos: (La primaryKey pasa del lado 1 a el lado muchos)
+
+Relacion de Muchos <--> muchos (se crea una nueva tabla y se pasan las PrimaryKey 
+a cada una de las tablas hacia la nueva)
+## Tabla A <- TablaAB -> Tabla B##
+
+1 a 1:  identifica la tabla con mayor relevancia(Entidad Fuerte) y se pasa la PrimaryKey
+hacia la tabla de menor relevancia(Entidad Debil)
+
+##############################################
+FORMAS NORMALES DE BASE DE DATOS
+
+1FN: Clave primaria, atomicos(no se puede subdividir)
+
+2FN: Todos campos deben depender dela PrimaryKey
+
+3FN: Los campos no pueden depender otro campo que no  sea la PrimaryKey
+
+#####################################
+ACCIONES BASICAS EN BASES DE DATOS
+
+
+-- SENTENCIA SQL
+-- INSERT
+insert into productos(codigo,nombre,precio,cantidad) Values (1, 'pan',200,240);
+INSERT INTO productos Values  (2, 'pan',200,240);
+
+---SELECTED consulta
+SELECT * FROM productos;
+SELECT codigo FROM productos;
+SELECT * FROM productos WHERE codigo = 2;
+SELECT * FROM productos WHERE codigo = 2 OR codigo = 1;
+
+--UPDATE
+UPDATE productos SET nombre = 'leche', precio = 300, cantidad = 123 WHERE codigo = 2;
+
+--DELETE
+DELETE FROM productos WHERE codigo = 2;
+
+
+
+
+
+
+
+
+
+
