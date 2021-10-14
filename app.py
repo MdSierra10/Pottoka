@@ -18,7 +18,7 @@ def Login():
 
 @app.route("/registro/" , methods=["GET", "POST"])
 def Registro():
-    return "pagina de registro"
+    return render_template("registro.html")
 
 @app.route("/home/admin/", methods=["GET", "POST"])
 def dashboard():
