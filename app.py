@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from formularios.formularios import Login, Register
 
 #aqui se instancian las librerias
-
+#cambio de nombre de archivo a formularios.py
 #se instancia un objeto de flask para crear las rutas
 app=Flask(__name__)
 #se hacen las rutas y se colocan los metodos
