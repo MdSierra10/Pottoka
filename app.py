@@ -29,14 +29,14 @@ def loguearse():
     frm = Login()
     if frm.validate_on_submit():
         email = frm.email.data
-        contraseña = frm.contraseña.data
+        password = frm.password.data
         #Aqui se aplica el hash para cifrar la contraseña
-        enc = hashlib.sha256(contraseña.encode())
+        enc = hashlib.sha256(password.encode())
         pass_enc = enc.hexdigest()
 
         with sqlite3.connect("pottoka.db") as con:
             cursor = con.cursor()
-            cursor.execute("SELECT email FROM usuario = ? AND contraseña = ?", [email, pass_enc])
+            cursor.execute("SELECT email = ?, password = ? FROM user ", [email, pass_enc])
         if cursor.fetchone():
             return render_template("base.html")
         else:
@@ -53,19 +53,19 @@ def loguearse():
 def Registro():
     frm = Register()
     if frm.validate_on_submit():
-        nombre = frm.nombre.data
-        correo = frm.correo.data
-        contraseña = frm.contraseña.data
+        name = frm.name.data
+        email = frm.email.data
+        password = frm.password.data
         telefono = frm.telefono.data
-        usuario = frm.usuario.data
-        enc = hashlib.sha256(contraseña.encode())
+        username = frm.username.data
+        enc = hashlib.sha256(password.encode())
         pass_enc = enc.hexdigest()
         
         #conexion a base de datos de registro
         with sqlite3.connect("pottoka.db") as con:
             cursor = con.cursor()#para manipular la base de datos
-            cursor.execute("INSERT INTO registro (nombre, email, contraseña, telefono, usuario) VALUES (?,?,?,?,?", 
-            [nombre, correo, contraseña, telefono, usuario ])
+            cursor.execute("INSERT INTO user (name, email, password, telefono, username) VALUES (?,?,?,?,?)", 
+            [name, email, password, telefono, username ])
         con.commit()
     return render_template("registro.html", frm = frm )
 
