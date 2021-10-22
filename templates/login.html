@@ -33,21 +33,42 @@
         </div>
 
         <!-- formularios -->
-        <form class="formularios" action="../home">
-          <input
-            required
-            type="email"
-            autocomplete="email"
-            placeholder="Email"
-          />
-          <input
+        {% block content %}
+        <form class="formularios" action="../home" method="post" >
+        {{ frm.hidden_tag() }}
+          <p>
+            
+            {{ frm.email }}
+            {% for error in frm.email.errors %}
+              <div>
+                {{ error }}
+              </div>
+            {% endfor %}
+          </p>
+          
+          <p>
+           
+            {{ frm.contraseña }}
+            {% for error in frm.contraseña.errors %}
+              <div>
+                {{ error }}
+              </div>
+            {% endfor %}
+            
+          </p>
+          <!--<input
             required
             type="password"
             autocomplete="current-password"
             placeholder="Contraseña"
-          />
-          <button type="submit">Iniciar Sesión</button>
+          />-->
+          
+          <button type="submit" >
+            {{ frm.inicio }}
+            
+          </button>
         </form>
+        {% endblock %}
 
         <!-- politicas de privacidad -->
         <div class="enlacesInicio">
@@ -59,4 +80,5 @@
       </div>
     </div>
   </body>
+  
 </html>

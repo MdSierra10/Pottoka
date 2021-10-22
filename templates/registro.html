@@ -36,14 +36,61 @@
         </div>
 
         <!-- formularios -->
-        <form class="formularios" action="../login">
-          <input required type="text" placeholder="Nombre" />
-          <input required type="email" placeholder="Email" />
-          <input required type="number" placeholder="Celular" />
-          <input required type="password" placeholder="Contraseña" />
-          <input required type="text" placeholder="Usuario" />
-          <button type="submit" >Registrate</button>
+        {% block content %}
+        <form class="formularios" action="../login" method="post">
+          {{ frm.hidden_tag() }}
+          <p>
+            
+            {{ frm.nombre }}
+            {% for error in frm.nombre.errors %}
+                <div>
+                    {{ error }}
+                </div>
+            {% endfor %}
+        </p>
+
+        <p>
+          
+          {{ frm.correo }}
+          {% for error in frm.correo.errors %}
+              <div>
+                  {{ error }}
+              </div>
+          {% endfor %}
+      </p>
+          
+        <p>
+          
+          {{ frm.telefono }}
+          {% for error in frm.telefono.errors %}
+              <div>
+                  {{ error }}
+              </div>
+          {% endfor %}
+      </p>
+
+      <p>
+        
+        {{ frm.contraseña }}
+        {% for error in frm.correo.errors %}
+            <div>
+                {{ error }}
+            </div>
+        {% endfor %}
+    </p>  
+        {{ frm.usuario }}
+        {% for error in frm.usuario.errors %}
+            <div>
+                {{ error }}
+            </div>
+        {% endfor %}
+    </p>
+          
+          <button type="submit" >
+            {{ frm.registrar }}
+          </button>
         </form>
+        {% endblock %}
 
         <!-- politicas de privacidad -->
         <div class="enlacesInicio">
