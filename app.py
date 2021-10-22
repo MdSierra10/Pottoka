@@ -13,9 +13,15 @@ app=Flask(__name__)
 app.secret_key = os.urandom(20)
 #se hacen las rutas y se colocan los metodosr
 
-@app.route("/home/", methods=["POST"])
+@app.route("/home/", methods=["GET","POST"])
 def home():
     return render_template("base.html")
+@app.route("/home/configuracion/", methods=["GET","POST"])
+def Config():
+    return "Pagina de configuracion"
+@app.route("/home/perfil/", methods=["GET","POST"])
+def Perfil():
+    return "Pagina Perfil"
 
 @app.route("/")
 @app.route("/login/", methods=["GET", "POST"])
@@ -37,6 +43,12 @@ def loguearse():
             return "PASSWORD/CORREO ERRADOS"
     return render_template("login.html", frm = frm)
 
+
+
+
+
+
+
 @app.route("/registro/" , methods=["GET", "POST"])
 def Registro():
     frm = Register()
@@ -54,15 +66,17 @@ def Registro():
             cursor = con.cursor()#para manipular la base de datos
             cursor.execute("INSERT INTO registro (nombre, email, contraseña, telefono, usuario) VALUES (?,?,?,?,?", 
             [nombre, correo, contraseña, telefono, usuario ])
+        con.commit()
     return render_template("registro.html", frm = frm )
 
 @app.route("/home/admin/", methods=["GET", "POST"])
 def dashboard():
     return "Pagina Admin"
 
-@app.route("/home/perfil/", methods=["GET"])
-def Perfil():
-    return "Pagina Perfil"
+
+
+
+
 
 @app.errorhandler(404)
 def page_not_found(error):
