@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/estilos.css" />
-    <link rel="icon" href="../static/assets/favicon.ico" type="image/x-icon" />
+{% extends "bases.html" %}
 
-    <title>POTTOKA</title>
-  </head>
-  <body>
+{% block title%}
+Registro
+{% endblock %}
+
+{% block content %} 
     <!--Caja Principal -->
     <div class="containerPrincipal">
       <!--Aqui la imagen con el logo -->
@@ -36,8 +31,8 @@
         </div>
 
         <!-- formularios -->
-        {% block content %}
-        <form class="formularios" action="../login" method="post">
+        
+        <form class="formularios" action="" method="post">
           {{ frm.hidden_tag() }}
           <p>
             
@@ -47,9 +42,9 @@
                     {{ error }}
                 </div>
             {% endfor %}
-        </p>
+          </p>
 
-        <p>
+          <p>
           
           {{ frm.email }}
           {% for error in frm.email.errors %}
@@ -57,7 +52,7 @@
                   {{ error }}
               </div>
           {% endfor %}
-      </p>
+        </p>
           
         <p>
           
@@ -67,30 +62,32 @@
                   {{ error }}
               </div>
           {% endfor %}
-      </p>
+        </p>
 
-      <p>
+        <p>
         
-        {{ frm.password }}
-        {% for error in frm.password.errors %}
-            <div>
-                {{ error }}
-            </div>
-        {% endfor %}
-    </p>  
-        {{ frm.username }}
-        {% for error in frm.username.errors %}
-            <div>
-                {{ error }}
-            </div>
-        {% endfor %}
-    </p>
+          {{ frm.password }}
+          {% for error in frm.password.errors %}
+              <div>
+                  {{ error }}
+              </div>
+          {% endfor %}
+        </p> 
+
+        <p> 
+          {{ frm.username }}
+          {% for error in frm.username.errors %}
+              <div>
+                  {{ error }}
+              </div>
+          {% endfor %}
+        </p>
           
           <button type="submit" >
             {{ frm.registrar }}
           </button>
         </form>
-        {% endblock %}
+{% endblock %}
 
         <!-- politicas de privacidad -->
         <div class="enlacesInicio">
@@ -103,5 +100,3 @@
         </div>
       </div>
     </div>
-  </body>
-</html>
