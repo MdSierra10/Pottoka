@@ -1,0 +1,142 @@
+{% extends "basep.html" %}
+
+{% block title%}
+Home
+{% endblock %}
+
+{% block content %} 
+    <!--Caja Principal -->
+    <header>
+      <div id="menu" class="menu">
+        <i class="fal fa-bars"></i>
+      </div>
+
+      <!-- Logo -->
+      <div class="logo"><img src="../static/assets/Logo_principal.svg" alt="" /></div>
+
+      <!-- Menu principal -->
+      <nav>
+        <ul>
+          <li>
+            <a href="/home/" >
+              <i class="fal fa-home"></i>
+              Inicio
+            </a>
+          </li>
+          <li>
+            {% if session.username %} <a href="/perfil/<{{session.username}}>" >
+              <i class="fal fa-user"></i>
+              Mi perfil
+            </a> 
+            {% else %}<a href="../login/" >
+              <i class="fal fa-sign-in"></i>
+              Iniciar sesión
+            {% endif %}
+          </li>
+          <li>
+            {% if session.username %} <a href="../home/configuracion/" method="POST">
+              <i class="fal fa-cog"></i>
+              Configuración
+            </a> {% endif %}
+          </li>
+        </ul>
+      </nav>
+            <!-- Busqueda menu hamburguesa -->
+      <form class="busqueda">
+        <i class="icono fal fa-search"></i>
+        <input type="search" placeholder="Buscar" />
+      </form>
+    
+
+      <!-- Usuario -->
+      <div >
+        
+        <h4>{% if session.username %} <a href="/perfil/<{{session.username}}>" > {{ session.username }} {% else %} Invitado {% endif %}</a></h4>
+        
+      </div>
+      <div class="space"></div>
+    </header>
+
+    <!-- menú responsive -->
+    <aside id="menuMovil">
+      <div class="cerrarCanvas">
+        <i id="cerrarMenu" class="fal fa-times"></i>
+      </div>
+
+      <!-- Usuario responsive -->
+      
+        
+        <h4>{% if session.username %} <a href="/perfil/<{{session.username}}>" > {{ session.username }} {% else %} Invitado {% endif %}</a></h4>
+     
+      <hr />
+      <!-- Menú responsive -->
+      <nav>
+        <ul>
+          <li>
+            <a href="/home/">
+              <i class="fal fa-home"></i>
+              Inicio
+            </a>
+          </li>
+          <li>
+              {% if session.username %} <a href="/perfil/<{{session.username}}>" >
+                <i class="fal fa-user"></i>
+                Mi perfil
+              </a> 
+              {% else %}<a href="../login/" >
+                <i class="fal fa-sign-in"></i>
+                Iniciar sesión
+              {% endif %}
+          </li>
+          <li>
+            {% if session.username %} <a href="/home/configuracion/" method="POST">
+              <i class="fal fa-cog"></i>
+              Configuración
+            </a> {% endif %}
+          </li>
+        </ul>
+      </nav>
+      <hr />
+      <!-- Busqueda menu hamburguesa -->
+      <form class="busqueda">
+        <i class="icono fal fa-search"></i>
+        <input type="search" placeholder="Buscar" />
+      </form>
+    </aside>
+
+    <!-- Contenido -->
+    <main>
+      
+        <!-- titulo del card -->
+    {% for r in rows %}  
+        <div class="titulo">
+          <div class="usuario">
+            <h4><a href="/perfil/<{{ r["username"] }}>" >{{ r["name"] }} </a><br>User: {{ r["username"] }}</h4>
+          </div>
+          {% set a = [0] %}
+
+          {% for t in rows2 %}
+            {% if t["username"] == r["username"]%} {% if a.append(a.pop() + 1) %}{% endif %} {% endif %}
+          {% endfor %}
+          <div class="fechaPublicacion">{{ a[0] }} Publicaciones</div>
+        </div>
+    {% endfor %}
+        <div class="divider"></div>
+
+        
+    
+   
+      <!-- Segundo -->
+      
+    
+    
+     
+        
+     
+    </main>
+    <!-- Script del menú -->
+    <script src="../static/js/base.js"></script>
+
+    <!-- Script del feed card -->
+    <script src="../static/js/cardFeed.js"></script>
+    {% endblock %}
