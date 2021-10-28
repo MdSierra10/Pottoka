@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{ url_for('static',filename='/css/estilos.css') }}">
-    <link rel="icon" href="../static/assets/favicon.ico" type="image/x-icon" />
+{% extends "bases.html" %}
 
-    <title>POTTOKA</title>
-  </head>
-  <body>
+{% block title%}
+Login
+{% endblock %}
+
+{% block content %} 
+
     <!--Caja Principal -->
     <div class="containerPrincipal">
       <!--Aqui la imagen con el logo -->
@@ -33,13 +29,12 @@
         </div>
 
         <!-- formularios -->
-        {% block content %}
-        <form class="formularios" action="../home" method="post" >
+        <form class="formularios" action="" method="post" >
         {{ frm.hidden_tag() }}
           <p>
             
-            {{ frm.email }}
-            {% for error in frm.email.errors %}
+            {{ frm.username }}
+            {% for error in frm.username.errors %}
               <div>
                 {{ error }}
               </div>
@@ -79,6 +74,3 @@
         </div>
       </div>
     </div>
-  </body>
-  
-</html>
